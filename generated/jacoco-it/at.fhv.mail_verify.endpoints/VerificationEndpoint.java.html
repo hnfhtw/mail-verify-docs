@@ -5,7 +5,7 @@
 // End of user code
 
 @org.springframework.web.bind.annotation.RestController
-<span class="nc" id="L8">public class VerificationEndpoint {</span>
+<span class="fc" id="L8">public class VerificationEndpoint {</span>
 	// Start of user code (user defined attributes)
 	
 	// End of user code
@@ -14,8 +14,8 @@
 	@org.springframework.web.bind.annotation.PostMapping(&quot;/verify&quot;)
 	public at.fhv.mail_verify.models.VerResult verify(@org.springframework.web.bind.annotation.RequestParam(&quot;mailad&quot;) String mailad, @org.springframework.web.bind.annotation.RequestParam(&quot;token&quot;) String token) throws Exception {
 		// Start of user code verify
-<span class="nc" id="L17">		System.out.println(&quot;Endpoint Reached&quot;);</span>
-<span class="nc" id="L18">		return at.fhv.mail_verify.handlers.VerificationHandler.getInstance().verify(mailad, token);</span>
+<span class="fc" id="L17">		System.out.println(&quot;Endpoint Reached&quot;);</span>
+<span class="fc" id="L18">		return at.fhv.mail_verify.handlers.VerificationHandler.getInstance().verify(mailad, token);</span>
 		// End of user code
 	}
 	

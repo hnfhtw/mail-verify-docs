@@ -8,22 +8,22 @@ import java.util.Map;
 
 public class AuthHandler {
 	// Start of user code (user defined attributes)
-<span class="nc" id="L11">	protected Map&lt;String, at.fhv.mail_verify.models.User&gt; users = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L11">	protected Map&lt;String, at.fhv.mail_verify.models.User&gt; users = new HashMap&lt;&gt;();</span>
 	// End of user code
 	
 
 	private static AuthHandler INSTANCE;
 	
-<span class="nc" id="L17">	private AuthHandler(){</span>
+<span class="fc" id="L17">	private AuthHandler(){</span>
 	    // singleton
-<span class="nc" id="L19">	}</span>
+<span class="fc" id="L19">	}</span>
 	
 	public static AuthHandler getInstance(){
-<span class="nc bnc" id="L22" title="All 2 branches missed.">	    if(INSTANCE == null){</span>
-<span class="nc" id="L23">	        INSTANCE = new AuthHandler();</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">	    if(INSTANCE == null){</span>
+<span class="fc" id="L23">	        INSTANCE = new AuthHandler();</span>
 	    }
 	
-<span class="nc" id="L26">	    return INSTANCE;</span>
+<span class="fc" id="L26">	    return INSTANCE;</span>
 	}
 	
 	public void logout(String token) throws Exception {
@@ -37,22 +37,22 @@ public class AuthHandler {
 	
 	public String login(String usermail) throws Exception {
 		// Start of user code login
-<span class="nc" id="L40">		System.out.println(&quot;AuthHandler called with: &quot; + usermail);</span>
-<span class="nc bnc" id="L41" title="All 4 branches missed.">		if(usermail == null || &quot;&quot;.equals(usermail)) {</span>
+<span class="fc" id="L40">		System.out.println(&quot;AuthHandler called with: &quot; + usermail);</span>
+<span class="pc bpc" id="L41" title="2 of 4 branches missed.">		if(usermail == null || &quot;&quot;.equals(usermail)) {</span>
 <span class="nc" id="L42">			System.out.println(&quot;AuthHandler failed&quot;);</span>
 <span class="nc" id="L43">			throw new Exception(&quot;Email must not be empty&quot;);</span>
 		}
 		
-<span class="nc" id="L46">		 String token = DigestUtils.md2Hex(usermail);</span>
-<span class="nc bnc" id="L47" title="All 2 branches missed.">	        if (!users.containsKey(token)) {</span>
-<span class="nc" id="L48">	        	at.fhv.mail_verify.models.User user = new at.fhv.mail_verify.models.User();</span>
-<span class="nc" id="L49">	        	user.setUsermail(usermail);</span>
-<span class="nc" id="L50">	        	user.setHistory(new at.fhv.mail_verify.models.History());</span>
-<span class="nc" id="L51">	          users.put(token, user);</span>
+<span class="fc" id="L46">		 String token = DigestUtils.md2Hex(usermail);</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">	        if (!users.containsKey(token)) {</span>
+<span class="fc" id="L48">	        	at.fhv.mail_verify.models.User user = new at.fhv.mail_verify.models.User();</span>
+<span class="fc" id="L49">	        	user.setUsermail(usermail);</span>
+<span class="fc" id="L50">	        	user.setHistory(new at.fhv.mail_verify.models.History());</span>
+<span class="fc" id="L51">	          users.put(token, user);</span>
 	        }
-<span class="nc" id="L53">	        System.out.println(&quot;Token = &quot; + token);</span>
+<span class="fc" id="L53">	        System.out.println(&quot;Token = &quot; + token);</span>
 
-<span class="nc" id="L55">	        return token;</span>
+<span class="fc" id="L55">	        return token;</span>
 		// End of user code
 	}
 	

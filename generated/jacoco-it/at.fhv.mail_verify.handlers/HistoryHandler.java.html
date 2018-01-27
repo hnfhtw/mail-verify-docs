@@ -12,22 +12,22 @@ public class HistoryHandler {
 
 	private static HistoryHandler INSTANCE;
 	
-<span class="nc" id="L15">	private HistoryHandler(){</span>
+<span class="fc" id="L15">	private HistoryHandler(){</span>
 	    // singleton
-<span class="nc" id="L17">	}</span>
+<span class="fc" id="L17">	}</span>
 	
 	public static HistoryHandler getInstance(){
-<span class="nc bnc" id="L20" title="All 2 branches missed.">	    if(INSTANCE == null){</span>
-<span class="nc" id="L21">	        INSTANCE = new HistoryHandler();</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">	    if(INSTANCE == null){</span>
+<span class="fc" id="L21">	        INSTANCE = new HistoryHandler();</span>
 	    }
 	
-<span class="nc" id="L24">	    return INSTANCE;</span>
+<span class="fc" id="L24">	    return INSTANCE;</span>
 	}
 	
 	public at.fhv.mail_verify.models.History getHistory(String token) throws Exception {
 		// Start of user code getHistory
-<span class="nc bnc" id="L29" title="All 4 branches missed.">		if(token == null || &quot;&quot;.equals(token)) {</span>
-<span class="nc" id="L30">			throw new Exception(&quot;Token must not be empty&quot;);</span>
+<span class="pc bpc" id="L29" title="1 of 4 branches missed.">		if(token == null || &quot;&quot;.equals(token)) {</span>
+<span class="fc" id="L30">			throw new Exception(&quot;Token must not be empty&quot;);</span>
 		}
 		
 <span class="nc" id="L33">		at.fhv.mail_verify.models.User user = AuthHandler.getInstance().getUser(token);</span>

@@ -18,28 +18,28 @@ public class VerificationHandler {
 
 	private static VerificationHandler INSTANCE;
 	
-<span class="nc" id="L21">	private VerificationHandler(){</span>
+<span class="fc" id="L21">	private VerificationHandler(){</span>
 	    // singleton
-<span class="nc" id="L23">	}</span>
+<span class="fc" id="L23">	}</span>
 	
 	public static VerificationHandler getInstance(){
-<span class="nc bnc" id="L26" title="All 2 branches missed.">	    if(INSTANCE == null){</span>
-<span class="nc" id="L27">	        INSTANCE = new VerificationHandler();</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">	    if(INSTANCE == null){</span>
+<span class="fc" id="L27">	        INSTANCE = new VerificationHandler();</span>
 	    }
 	
-<span class="nc" id="L30">	    return INSTANCE;</span>
+<span class="fc" id="L30">	    return INSTANCE;</span>
 	}
 	
 	public at.fhv.mail_verify.models.VerResult verify(String mailad, String token) throws Exception {
 		// Start of user code verify
-<span class="nc bnc" id="L35" title="All 4 branches missed.">		if(token == null || &quot;&quot;.equals(token)) {</span>
-<span class="nc" id="L36">			throw new Exception(&quot;Not authenticated&quot;);</span>
+<span class="fc bfc" id="L35" title="All 4 branches covered.">		if(token == null || &quot;&quot;.equals(token)) {</span>
+<span class="fc" id="L36">			throw new Exception(&quot;Not authenticated&quot;);</span>
 		}
 		
-<span class="nc bnc" id="L39" title="All 4 branches missed.">		if(mailad == null || &quot;&quot;.equals(mailad)) {</span>
-<span class="nc" id="L40">			at.fhv.mail_verify.models.VerResult empty = new at.fhv.mail_verify.models.VerResult();</span>
-<span class="nc" id="L41">			empty.setResult(false);</span>
-<span class="nc" id="L42">			return empty;</span>
+<span class="pc bpc" id="L39" title="1 of 4 branches missed.">		if(mailad == null || &quot;&quot;.equals(mailad)) {</span>
+<span class="fc" id="L40">			at.fhv.mail_verify.models.VerResult empty = new at.fhv.mail_verify.models.VerResult();</span>
+<span class="fc" id="L41">			empty.setResult(false);</span>
+<span class="fc" id="L42">			return empty;</span>
 		}
 		
 <span class="nc" id="L45">		String sURL = &quot;http://apilayer.net/api/check?access_key=&quot; + System.getenv(&quot;MAILBOXLAYER_API_KEY&quot;) + &quot;&amp;email=&quot; + mailad + &quot;&amp;smtp=1&amp;format=1&quot;;</span>
