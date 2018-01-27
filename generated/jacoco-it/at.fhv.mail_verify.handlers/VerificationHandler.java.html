@@ -30,19 +30,19 @@ public class VerificationHandler {
 <span class="nc" id="L30">	    return INSTANCE;</span>
 	}
 	
-	public at.fhv.mail_verify.models.VerResult verify(String mailAd, String token) throws Exception {
+	public at.fhv.mail_verify.models.VerResult verify(String mailad, String token) throws Exception {
 		// Start of user code verify
 <span class="nc bnc" id="L35" title="All 4 branches missed.">		if(token == null || &quot;&quot;.equals(token)) {</span>
 <span class="nc" id="L36">			throw new Exception(&quot;Not authenticated&quot;);</span>
 		}
 		
-<span class="nc bnc" id="L39" title="All 4 branches missed.">		if(mailAd == null || &quot;&quot;.equals(mailAd)) {</span>
+<span class="nc bnc" id="L39" title="All 4 branches missed.">		if(mailad == null || &quot;&quot;.equals(mailad)) {</span>
 <span class="nc" id="L40">			at.fhv.mail_verify.models.VerResult empty = new at.fhv.mail_verify.models.VerResult();</span>
 <span class="nc" id="L41">			empty.setResult(false);</span>
 <span class="nc" id="L42">			return empty;</span>
 		}
 		
-<span class="nc" id="L45">		String sURL = &quot;http://apilayer.net/api/check?access_key=&quot; + System.getenv(&quot;MAILBOXLAYER_API_KEY&quot;) + &quot;&amp;email=&quot; + mailAd + &quot;&amp;smtp=1&amp;format=1&quot;;</span>
+<span class="nc" id="L45">		String sURL = &quot;http://apilayer.net/api/check?access_key=&quot; + System.getenv(&quot;MAILBOXLAYER_API_KEY&quot;) + &quot;&amp;email=&quot; + mailad + &quot;&amp;smtp=1&amp;format=1&quot;;</span>
 		
 <span class="nc" id="L47">		HttpResponse response = Request.Post(sURL).execute().returnResponse();</span>
 <span class="nc" id="L48">		String result = IOUtils.toString(response.getEntity().getContent(), &quot;UTF-8&quot;);</span>
@@ -60,7 +60,7 @@ public class VerificationHandler {
 <span class="nc" id="L60">      verificationResult.setResult(false);</span>
     }
 		
-<span class="nc" id="L63">		HistoryHandler.getInstance().addHistory(token, mailAd, verificationResult);</span>
+<span class="nc" id="L63">		HistoryHandler.getInstance().addHistory(token, mailad, verificationResult);</span>
 <span class="nc" id="L64">		return verificationResult;</span>
         
 		// End of user code

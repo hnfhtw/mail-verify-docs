@@ -35,18 +35,18 @@ public class AuthHandler {
 		// End of user code
 <span class="nc" id="L36">	}</span>
 	
-	public String login(String userMail) throws Exception {
+	public String login(String usermail) throws Exception {
 		// Start of user code login
-<span class="nc" id="L40">		System.out.println(&quot;AuthHandler called with: &quot; + userMail);</span>
-<span class="nc bnc" id="L41" title="All 4 branches missed.">		if(userMail == null || &quot;&quot;.equals(userMail)) {</span>
+<span class="nc" id="L40">		System.out.println(&quot;AuthHandler called with: &quot; + usermail);</span>
+<span class="nc bnc" id="L41" title="All 4 branches missed.">		if(usermail == null || &quot;&quot;.equals(usermail)) {</span>
 <span class="nc" id="L42">			System.out.println(&quot;AuthHandler failed&quot;);</span>
 <span class="nc" id="L43">			throw new Exception(&quot;Email must not be empty&quot;);</span>
 		}
 		
-<span class="nc" id="L46">		 String token = DigestUtils.md2Hex(userMail);</span>
+<span class="nc" id="L46">		 String token = DigestUtils.md2Hex(usermail);</span>
 <span class="nc bnc" id="L47" title="All 2 branches missed.">	        if (!users.containsKey(token)) {</span>
 <span class="nc" id="L48">	        	at.fhv.mail_verify.models.User user = new at.fhv.mail_verify.models.User();</span>
-<span class="nc" id="L49">	        	user.setUserMail(userMail);</span>
+<span class="nc" id="L49">	        	user.setUsermail(usermail);</span>
 <span class="nc" id="L50">	        	user.setHistory(new at.fhv.mail_verify.models.History());</span>
 <span class="nc" id="L51">	          users.put(token, user);</span>
 	        }

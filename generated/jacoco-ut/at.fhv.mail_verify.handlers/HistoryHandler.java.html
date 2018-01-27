@@ -35,12 +35,12 @@ public class HistoryHandler {
 		// End of user code
 	}
 	
-	public void addHistory(String token, String addr, at.fhv.mail_verify.models.VerResult result) throws Exception {
+	public void addHistory(String token, String mailad, at.fhv.mail_verify.models.VerResult result) throws Exception {
 		// Start of user code addHistory
 <span class="nc" id="L40">		at.fhv.mail_verify.models.User user = AuthHandler.getInstance().getUser(token);</span>
 <span class="nc" id="L41">		at.fhv.mail_verify.models.HistoryItem item = new at.fhv.mail_verify.models.HistoryItem();</span>
-<span class="nc" id="L42">    item.setRequestDate(Instant.now().toEpochMilli());</span>
-<span class="nc" id="L43">    item.setMailAd(addr);</span>
+<span class="nc" id="L42">    item.setRequestdate(Instant.now().toEpochMilli());</span>
+<span class="nc" id="L43">    item.setMailad(mailad);</span>
 <span class="nc" id="L44">    item.setResult(result);</span>
 <span class="nc" id="L45">    user.getHistory().getItems().add(item);</span>
     

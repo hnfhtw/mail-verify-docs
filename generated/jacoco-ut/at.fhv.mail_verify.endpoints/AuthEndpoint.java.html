@@ -12,10 +12,10 @@
 	
 	
 	@org.springframework.web.bind.annotation.PostMapping(&quot;/login&quot;)
-	public String login(@org.springframework.web.bind.annotation.RequestParam(&quot;userMail&quot;) String userMail) throws Exception {
+	public String login(@org.springframework.web.bind.annotation.RequestParam(&quot;usermail&quot;) String usermail) throws Exception {
 		// Start of user code login
-<span class="nc" id="L17">		System.out.println(&quot;Login Request received with: &quot; + userMail);</span>
-<span class="nc" id="L18">		return at.fhv.mail_verify.handlers.AuthHandler.getInstance().login(userMail);</span>
+<span class="nc" id="L17">		System.out.println(&quot;Login Request received with: &quot; + usermail);</span>
+<span class="nc" id="L18">		return at.fhv.mail_verify.handlers.AuthHandler.getInstance().login(usermail);</span>
 		// End of user code
 	}
 	
