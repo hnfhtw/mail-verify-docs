@@ -53,16 +53,15 @@ public class VerificationHandler {
 				
 <span class="nc" id="L54">		at.fhv.mail_verify.models.VerResult verificationResult = new at.fhv.mail_verify.models.VerResult();</span>
 
-<span class="nc bnc" id="L56" title="All 2 branches missed.">    if(bMailValid == true){</span>
-<span class="nc" id="L57">      verificationResult.setResult(true);</span>
-    }
-    else{
-<span class="nc" id="L60">      verificationResult.setResult(false);</span>
-    }
+<span class="nc bnc" id="L56" title="All 2 branches missed.">		if(bMailValid == true){</span>
+<span class="nc" id="L57">		  verificationResult.setResult(true);</span>
+		}
+		else{
+<span class="nc" id="L60">		  verificationResult.setResult(false);</span>
+		}
 		
 <span class="nc" id="L63">		HistoryHandler.getInstance().addHistory(token, mailad, verificationResult);</span>
 <span class="nc" id="L64">		return verificationResult;</span>
-        
 		// End of user code
 	}
 	
