@@ -1,6 +1,6 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 mail-verify-backend,at.fhv.mail_verify.models,HistoryItem,33,0,0,0,13,0,7,0,7,0
-mail-verify-backend,at.fhv.mail_verify.models,User,6,17,0,0,2,7,2,3,2,3
+mail-verify-backend,at.fhv.mail_verify.models,User,13,20,0,0,5,8,4,3,4,3
 mail-verify-backend,at.fhv.mail_verify.models,VerResult,0,13,0,0,0,5,0,3,0,3
 mail-verify-backend,at.fhv.mail_verify.models,History,7,8,0,0,3,2,2,1,2,1
 mail-verify-backend,at.fhv.mail_verify.endpoints,AuthEndpoint,4,17,0,0,2,3,1,2,1,2
