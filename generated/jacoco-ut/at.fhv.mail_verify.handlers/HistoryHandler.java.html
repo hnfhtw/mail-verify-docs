@@ -24,28 +24,28 @@ public class HistoryHandler {
 <span class="fc" id="L24">	    return INSTANCE;</span>
 	}
 	
-	public at.fhv.mail_verify.models.History getHistory(String token) throws Exception {
-		// Start of user code getHistory
-<span class="nc bnc" id="L29" title="All 4 branches missed.">		if(token == null || &quot;&quot;.equals(token)) {</span>
-<span class="nc" id="L30">			throw new Exception(&quot;Token must not be empty&quot;);</span>
-		}
-		
-<span class="nc" id="L33">		at.fhv.mail_verify.models.User user = AuthHandler.getInstance().getUser(token);</span>
-<span class="nc" id="L34">		return user.getHistory();</span>
-		// End of user code
-	}
-	
 	public void addHistory(String token, String mailad, at.fhv.mail_verify.models.VerResult result) throws Exception {
 		// Start of user code addHistory
-<span class="nc" id="L40">		at.fhv.mail_verify.models.User user = AuthHandler.getInstance().getUser(token);</span>
-<span class="nc" id="L41">		at.fhv.mail_verify.models.HistoryItem item = new at.fhv.mail_verify.models.HistoryItem();</span>
-<span class="nc" id="L42">    item.setRequestdate(Instant.now().toEpochMilli());</span>
-<span class="nc" id="L43">    item.setMailad(mailad);</span>
-<span class="nc" id="L44">    item.setResult(result);</span>
-<span class="nc" id="L45">    user.getHistory().getItems().add(item);</span>
+<span class="nc" id="L29">		at.fhv.mail_verify.models.User user = AuthHandler.getInstance().getUser(token);</span>
+<span class="nc" id="L30">		at.fhv.mail_verify.models.HistoryItem item = new at.fhv.mail_verify.models.HistoryItem();</span>
+<span class="nc" id="L31">    item.setRequestdate(Instant.now().toEpochMilli());</span>
+<span class="nc" id="L32">    item.setMailad(mailad);</span>
+<span class="nc" id="L33">    item.setResult(result);</span>
+<span class="nc" id="L34">    user.getHistory().getItems().add(item);</span>
     
 		// End of user code
-<span class="nc" id="L48">	}</span>
+<span class="nc" id="L37">	}</span>
+	
+	public at.fhv.mail_verify.models.History getHistory(String token) throws Exception {
+		// Start of user code getHistory
+<span class="nc bnc" id="L41" title="All 4 branches missed.">		if(token == null || &quot;&quot;.equals(token)) {</span>
+<span class="nc" id="L42">			throw new Exception(&quot;Token must not be empty&quot;);</span>
+		}
+		
+<span class="nc" id="L45">		at.fhv.mail_verify.models.User user = AuthHandler.getInstance().getUser(token);</span>
+<span class="nc" id="L46">		return user.getHistory();</span>
+		// End of user code
+	}
 	
 	// Start of user code (user defined operations)
 	

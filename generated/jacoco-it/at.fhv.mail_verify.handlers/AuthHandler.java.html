@@ -26,35 +26,35 @@ public class AuthHandler {
 <span class="fc" id="L26">	    return INSTANCE;</span>
 	}
 	
-	public void logout(String token) throws Exception {
-		// Start of user code logout
-<span class="nc bnc" id="L31" title="All 4 branches missed.">		if(token == null || &quot;&quot;.equals(token)) {</span>
-<span class="nc" id="L32">			throw new Exception(&quot;Unknown token&quot;);</span>
-		}
-<span class="nc" id="L34">		users.remove(token);</span>
-		// End of user code
-<span class="nc" id="L36">	}</span>
-	
 	public String login(String usermail) throws Exception {
 		// Start of user code login
-<span class="fc" id="L40">		System.out.println(&quot;AuthHandler called with: &quot; + usermail);</span>
-<span class="pc bpc" id="L41" title="2 of 4 branches missed.">		if(usermail == null || &quot;&quot;.equals(usermail)) {</span>
-<span class="nc" id="L42">			System.out.println(&quot;AuthHandler failed&quot;);</span>
-<span class="nc" id="L43">			throw new Exception(&quot;Email must not be empty&quot;);</span>
+<span class="fc" id="L31">		System.out.println(&quot;AuthHandler called with: &quot; + usermail);</span>
+<span class="pc bpc" id="L32" title="2 of 4 branches missed.">		if(usermail == null || &quot;&quot;.equals(usermail)) {</span>
+<span class="nc" id="L33">			System.out.println(&quot;AuthHandler failed&quot;);</span>
+<span class="nc" id="L34">			throw new Exception(&quot;Email must not be empty&quot;);</span>
 		}
 		
-<span class="fc" id="L46">		 String token = DigestUtils.md2Hex(usermail);</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">	        if (!users.containsKey(token)) {</span>
-<span class="fc" id="L48">	        	at.fhv.mail_verify.models.User user = new at.fhv.mail_verify.models.User();</span>
-<span class="fc" id="L49">	        	user.setUsermail(usermail);</span>
-<span class="fc" id="L50">	        	user.setHistory(new at.fhv.mail_verify.models.History());</span>
-<span class="fc" id="L51">	          users.put(token, user);</span>
+<span class="fc" id="L37">		 String token = DigestUtils.md2Hex(usermail);</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">	        if (!users.containsKey(token)) {</span>
+<span class="fc" id="L39">	        	at.fhv.mail_verify.models.User user = new at.fhv.mail_verify.models.User();</span>
+<span class="fc" id="L40">	        	user.setUsermail(usermail);</span>
+<span class="fc" id="L41">	        	user.setHistory(new at.fhv.mail_verify.models.History());</span>
+<span class="fc" id="L42">	          users.put(token, user);</span>
 	        }
-<span class="fc" id="L53">	        System.out.println(&quot;Token = &quot; + token);</span>
+<span class="fc" id="L44">	        System.out.println(&quot;Token = &quot; + token);</span>
 
-<span class="fc" id="L55">	        return token;</span>
+<span class="fc" id="L46">	        return token;</span>
 		// End of user code
 	}
+	
+	public void logout(String token) throws Exception {
+		// Start of user code logout
+<span class="nc bnc" id="L52" title="All 4 branches missed.">		if(token == null || &quot;&quot;.equals(token)) {</span>
+<span class="nc" id="L53">			throw new Exception(&quot;Unknown token&quot;);</span>
+		}
+<span class="nc" id="L55">		users.remove(token);</span>
+		// End of user code
+<span class="nc" id="L57">	}</span>
 	
 	// Start of user code (user defined operations)
 	public at.fhv.mail_verify.models.User getUser(String token) throws Exception{
